@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addName } from '../../store/reducers/User';
 import Button from '../../components/UI/Button/Button';
 
 const HomeScreen = () => {
 	const [name, setName] = useState("");
 	const [error, setError] = useState("");
 	const history = useHistory();
+	const dispatch = useDispatch();
 
 	const goToMainScreen = () => {
 		if (name) {
+			dispatch(addName(name));
 			history.push('/education');
 		} else {
 			setError("Please enter your name.");

@@ -18,4 +18,6 @@ const userSlice = createSlice({
 })
 
 export const { addName, addEducation } = userSlice.actions;
+export const getName = (state: { user: { name: string; }; }) => state.user.name;
+export const getEducation = (state: { user: { education: any; }; }) => state.user.education;
 export default userSlice.reducer;
