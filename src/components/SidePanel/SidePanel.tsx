@@ -5,7 +5,11 @@ const SidePanel = ({ education } : { education: any}) => {
 		<div className="sidepanel">
 			<h3>Education</h3>
 			<ul>
-				
+				{education.map((educationObject: { school: string; }) => (
+					<li>
+						{educationObject.school}
+					</li>
+				))}
 			</ul>
 		</div>
 	);

@@ -127,6 +127,7 @@ const EducationModal = ({ show, close } : { show: true, close: any}) => {
 							onChange={(e) => {
 								setNewDegree(e.target.value)
 							}}
+							required
 						/>
 					</div>
 
@@ -139,6 +140,7 @@ const EducationModal = ({ show, close } : { show: true, close: any}) => {
 							onChange={(e) => {
 								setNewFieldOfStudy(e.target.value)
 							}}
+							required
 						/>
 					</div>
 					
@@ -150,6 +152,7 @@ const EducationModal = ({ show, close } : { show: true, close: any}) => {
 							onChange={(e) => {
 								setNewStartDate(e.target.value)
 							}}
+							required
 						/>
 					</div>
 					
@@ -161,6 +164,7 @@ const EducationModal = ({ show, close } : { show: true, close: any}) => {
 							onChange={(e) => {
 								setNewEndDate(e.target.value)
 							}}
+							required
 						/>
 					</div>
 
@@ -173,6 +177,7 @@ const EducationModal = ({ show, close } : { show: true, close: any}) => {
 							onChange={(e) => {
 								setNewGpa(e.target.value)
 							}}
+							required
 						/>
 					</div>
 					
@@ -197,7 +202,7 @@ const EducationModal = ({ show, close } : { show: true, close: any}) => {
 							}} 
 						/>
 					</div>
-
+					<input type="submit" value="Save"></input>
 				</form>
 			</Modal>
 		</>
