@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import { useDispatch } from 'react-redux';
 import { addEducation } from '../../store/reducers/User';
 import Input from '../UI/Input/Input';
+import TextArea from '../UI/TextArea/TextArea';
 import './EducationModal.css'
 
 const customStyles = {
@@ -23,8 +24,8 @@ const EducationModal = ({ show, close } : { show: true, close: any}) => {
 	const [newSchool, setNewSchool] = useState("");
 	const [newDegree, setNewDegree] = useState("");
 	const [newFieldOfStudy, setNewFieldOfStudy] = useState("");
-	const [newStartDate, setNewStartDate] = useState();
-	const [newEndDate, setNewEndDate] = useState();
+	const [newStartDate, setNewStartDate] = useState("");
+	const [newEndDate, setNewEndDate] = useState("");
 	const [newGpa, setNewGpa] = useState("");
 	const [newExtracurricular, setNewExtracurricular] = useState("");
 	const [newDescription, setNewDescription] = useState("");
@@ -53,8 +54,8 @@ const EducationModal = ({ show, close } : { show: true, close: any}) => {
 		setNewSchool("");
 		setNewDegree("");
 		setNewFieldOfStudy("");
-		setNewStartDate(undefined);
-		setNewEndDate(undefined);
+		setNewStartDate("");
+		setNewEndDate("");
 		setNewGpa("");
 		setNewExtracurricular("");
 		setNewDescription("")
@@ -100,8 +101,8 @@ const EducationModal = ({ show, close } : { show: true, close: any}) => {
 			>
 				<h2>New Education Modal</h2>
 				<form onSubmit={addNewEducation}>
-					<label>School</label>
-					<div>
+					<label>School:</label>
+					<div className="space-out">
 						<Input 
 							type="text"
 							placeholder="School"
@@ -116,6 +117,87 @@ const EducationModal = ({ show, close } : { show: true, close: any}) => {
 							{showSchools}
 						</div>
 					</div>
+
+					<label>Degree:</label>
+					<div className="space-out">
+						<Input 
+							type="text"
+							placeholder="Degree"
+							value={newDegree}
+							onChange={(e) => {
+								setNewDegree(e.target.value)
+							}}
+						/>
+					</div>
+
+					<label>Field of Study:</label>
+					<div className="space-out">
+						<Input 
+							type="text"
+							placeholder="Field of Study"
+							value={newFieldOfStudy}
+							onChange={(e) => {
+								setNewFieldOfStudy(e.target.value)
+							}}
+						/>
+					</div>
+					
+					<label>Start Date:</label>
+					<div className="space-out">
+						<Input 
+							type="date"
+							value={newStartDate}
+							onChange={(e) => {
+								setNewStartDate(e.target.value)
+							}}
+						/>
+					</div>
+					
+					<label>End Date:</label>
+					<div className="space-out">
+						<Input 
+							type="date"
+							value={newEndDate}
+							onChange={(e) => {
+								setNewEndDate(e.target.value)
+							}}
+						/>
+					</div>
+
+					<label>GPA:</label>
+					<div className="space-out">
+						<Input 
+							type="text"
+							placeholder="GPA"
+							value={newGpa}
+							onChange={(e) => {
+								setNewGpa(e.target.value)
+							}}
+						/>
+					</div>
+					
+					<label>Extracurriculars:</label>
+					<div className="space-out">
+						<TextArea 
+							value={newExtracurricular}
+							placeholder="Extracurriculars"
+							onChange={(e) => {
+								setNewExtracurricular(e.target.value)
+							}} 
+						/>
+					</div>
+					
+					<label>Description:</label>
+					<div className="space-out">
+						<TextArea 
+							value={newDescription}
+							placeholder="Descpription"
+							onChange={(e) => {
+								setNewDescription(e.target.value)
+							}} 
+						/>
+					</div>
+
 				</form>
 			</Modal>
 		</>
