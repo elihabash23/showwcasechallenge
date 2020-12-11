@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Education from '../../components/Education/Education';
+import EducationModal from '../../components/EducationModal/EducationModal';
 import SidePanel from '../../components/SidePanel/SidePanel';
 import Button from '../../components/UI/Button/Button';
 import { getName, getEducation } from '../../store/reducers/User';
@@ -20,6 +21,15 @@ const MainScreen = () => {
 		}
 	})
 
+	let displayModal = showEducationModal ? 
+		<EducationModal
+			show={showEducationModal} 
+			close={() => setShowEducationModal(false)}
+		/>
+		:
+		"";
+							
+
 	return (
 		<div className="container-mainscreen">
 			<div className="header">
@@ -33,12 +43,12 @@ const MainScreen = () => {
 			<div className="grid">
 				<SidePanel 
 					education={education}
-					/>
-				
+				/>
 				<Education 
 					currentEducation={education[currentEducationIndex]}
 				/>
 			</div>
+			{displayModal}
 		</div>
 	);
 }
