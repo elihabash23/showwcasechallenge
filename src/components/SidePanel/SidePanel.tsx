@@ -1,9 +1,14 @@
 import React from 'react'
 
-export default function SidePanel() {
+const SidePanel = ({ education } : { education: any}) => {
 	return (
-		<div>
-			
+		<div className="sidepanel">
+			<h3>Education</h3>
+			<ul>
+				
+			</ul>
 		</div>
-	)
+	);
 }
+
+export default SidePanel;

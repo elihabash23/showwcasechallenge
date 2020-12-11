@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addName } from '../../store/reducers/User';
 import Button from '../../components/UI/Button/Button';
+import './HomeScreen.css';
+import Input from '../../components/UI/Input/Input';
 
 const HomeScreen = () => {
 	const [name, setName] = useState("");
@@ -20,27 +22,26 @@ const HomeScreen = () => {
 	}
 
 	return(
-		<div>
+		<div className="center-screen">
 			<p>
 				Hi there! Welcome to your education showcase.
 			</p>
 			<p>
-				Type your name and click "Enter below to begin!"
+				Type your name and click "Enter" below to begin!
 			</p>
-			<input 
-				type="text"
-				placeholder="Your name"
+			<Input 
+				placeholder="Your Name"
 				onChange={e => setName(e.target.value)}
 			/>
-			<Button 
-				type="button"
-				onClick={goToMainScreen}>
-				Enter!
-			</Button>
+			<div>
+				<Button 
+					type="button"
+					onClick={goToMainScreen}>
+					Enter
+				</Button>
+			</div>
 			<p
-				style={{ marginTop: "10px",
-							color: 'red' ,
-							fontSize: '.7em'}}>
+				className="error" >
 				{error}
 			</p>
 		</div>

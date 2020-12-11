@@ -1,9 +1,14 @@
 import React from 'react'
 
-export default function Education() {
+const Education = ({ currentEducation } : { currentEducation: any }) => {
+
+	let educationInfo = currentEducation ? <p>Educations listed</p> : <p>No educations listed</p>
+
 	return (
-		<div>
-			
+		<div className="education">
+			{educationInfo}
 		</div>
 	)
 }
+
+export default Education;
