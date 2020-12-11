@@ -5,6 +5,7 @@ import Education from '../../components/Education/Education';
 import SidePanel from '../../components/SidePanel/SidePanel';
 import Button from '../../components/UI/Button/Button';
 import { getName, getEducation } from '../../store/reducers/User';
+import './MainScreen.css'
 
 const MainScreen = () => {
 	const [showEducationModal, setShowEducationModal] = useState(false);
@@ -20,7 +21,7 @@ const MainScreen = () => {
 	})
 
 	return (
-		<div>
+		<div className="container-mainscreen">
 			<div className="header">
 				<h1>Welcome to {name}'s education page</h1>
 				<Button
