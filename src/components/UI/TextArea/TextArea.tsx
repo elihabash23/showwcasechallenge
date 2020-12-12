@@ -6,7 +6,8 @@ const TextArea = styled.textarea({
 	border: "1px solid grey",
 	borderRadius: "5px",
 	fontSize: "20px",
-	padding: "5px"
+	padding: "5px",
+	fontFamily: "sans-serif"
 });
 
 export default TextArea;

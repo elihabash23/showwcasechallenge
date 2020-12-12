@@ -164,7 +164,6 @@ const EducationModal = ({ show, close } : { show: true, close: any}) => {
 							onChange={(e) => {
 								setNewEndDate(e.target.value)
 							}}
-							required
 						/>
 					</div>
 

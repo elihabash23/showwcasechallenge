@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { borderRadius, padding } from 'styled-system';
 
 const Button = styled.button({
 	backgroundColor: "grey",

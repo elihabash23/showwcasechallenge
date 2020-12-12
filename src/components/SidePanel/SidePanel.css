@@ -1,0 +1,23 @@
+.education-list {
+	list-style: none;
+	margin-top: 15px;
+	padding: 0px;
+ }
+ 
+ .education-list li {
+	padding: 10px 15px;
+	cursor: pointer;
+	border-radius: 4px;
+	transition: all .2s;
+ }
+ 
+ .education-list li:hover {
+	background-color: #eee;
+ }
+ 
+ .education-list li.selected {
+	color: white;
+	font-weight: bold;
+	background-color: black;
+ }
+ 

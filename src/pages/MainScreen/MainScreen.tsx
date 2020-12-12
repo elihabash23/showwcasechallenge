@@ -43,6 +43,10 @@ const MainScreen = () => {
 			<div className="grid">
 				<SidePanel 
 					education={education}
+					currentEducationIndex={currentEducationIndex}
+					changeCurrentEducationIndex={(index: number) => {
+						setCurrentEducationIndex(index);
+					}}
 				/>
 				<Education 
 					currentEducation={education[currentEducationIndex]}
