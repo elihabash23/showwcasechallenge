@@ -201,7 +201,7 @@ const EducationModal = ({ show, close } : { show: true, close: any}) => {
 							}} 
 						/>
 					</div>
-					<input type="submit" value="Save"></input>
+					<input type="submit" value="Save" style={{"float": "right"}}></input>
 				</form>
 			</Modal>
 		</>
