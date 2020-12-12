@@ -8,7 +8,7 @@ const SidePanel = ({ education, currentEducationIndex, changeCurrentEducationInd
 			<ul className="education-list">
 				{education.map((educationObject: { school: string; }, i: number) => (
 					<li 
-					className={currentEducationIndex == i ? "selected" : ""}
+					className={currentEducationIndex === i ? "selected" : ""}
 					onClick={() => {
 						changeCurrentEducationIndex(i);
 					}}>
